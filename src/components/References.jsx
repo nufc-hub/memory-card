@@ -1,7 +1,7 @@
 import { referencesData } from '../constants/referencesData';
 
 // Renders asset references
-export default function References() {
+export default function References(setActivePage) {
   return (
     <div className="references">
       {referencesData.map((reference) => (
@@ -16,6 +16,10 @@ export default function References() {
           </a>
         </li>
       ))}
+      <div className="home-button">
+        {/* Links to homepage */}
+        <button onClick={() => setActivePage('home')}>Home</button>
+      </div>
     </div>
   );
 }
