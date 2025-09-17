@@ -1,0 +1,11 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.references-button {
+  width: 6rem;
+  height: 3rem;
+  border-radius: 12px;
+}
