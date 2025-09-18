@@ -1,0 +1,23 @@
+.references-page,
+.home-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.references-page {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.reference {
+  margin-bottom: 1rem;
+  list-style-type: none;
+}
+
+.home-button {
+  width: 6rem;
+  height: 3rem;
+  border-radius: 12px;
+}
