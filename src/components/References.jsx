@@ -1,11 +1,12 @@
 import { referencesData } from '../constants/referencesData';
+import '../styles/References.css';
 
 // Renders asset references
-export default function References(setActivePage) {
+export default function References({ setActivePage }) {
   return (
-    <div className="references">
+    <div className="references-page">
       {referencesData.map((reference) => (
-        <li key={reference.id}>
+        <li className="reference" key={reference.id}>
           <a
             href={reference.url}
             title={reference.title}
@@ -16,9 +17,11 @@ export default function References(setActivePage) {
           </a>
         </li>
       ))}
-      <div className="home-button">
+      <div>
         {/* Links to homepage */}
-        <button onClick={() => setActivePage('home')}>Home</button>
+        <button className="home-button" onClick={() => setActivePage('home')}>
+          Home
+        </button>
       </div>
     </div>
   );
