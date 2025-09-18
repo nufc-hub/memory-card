@@ -8,8 +8,10 @@ export default function Cards() {
     <div className="cards">
       {cards.map((card) => (
         <button key={card.id} className="card">
-          <img src={card.url} alt="sushi" />
-          <p>{card.name}</p>
+          <div className="card-contents">
+            <img src={card.url} alt="sushi" />
+            <p>{card.name}</p>
+          </div>
         </button>
       ))}
     </div>
