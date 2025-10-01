@@ -1,32 +1,51 @@
 import '../styles/Cards.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { foodData } from '../constants/cardData';
 import Card from './Card';
 import shuffleArray from '../utils/shuffleArray';
 
-export default function Cards({ level }) {
-  // Get foodData array for each level and randomise its contents
-  const levelOneCards = foodData.slice(0, 3); // Three cards
-  const levelTwoCards = foodData.slice(0, 6); // Six cards
-  const levelThreeCards = foodData.slice(0, 9); // Nine cards
-  const levelFourCards = foodData; // Twelve cards
+export default function Cards({ level, setLevel }) {
+  const [cards, setCards] = useState([]);
+  const [clickedIds, setClickedIds] = useState([]);
 
-  // How to track which cards have been clicked?
-  // Read odin useEffect
+  function handleCardClick(id) {
+    // Check if card has been clicked already
+    if (clickedIds.includes(id)) {
+      console.log('Game Over'); // Change this later - maybe a parameter like (message) that comes from a messages.js file
+      return;
+    }
 
-  let cardLevel;
-  if (level === 1) cardLevel = levelOneCards;
-  else if (level === 2) cardLevel = levelTwoCards;
-  else if (level === 3) cardLevel = levelThreeCards;
-  else cardLevel = levelFourCards;
+    // Adds the card ID to the clickedIds array so if the same card is clicked again - game over
+    const newClicked = [...clickedIds, id];
+    setClickedIds(newClicked);
 
-  const [cards, setCards] = useState(shuffleArray(cardLevel));
+    if (newClicked.length === cards.length) {
+      // If newClicked.length === cards.length, increase level by one and render next level
+      setLevel((prevLevel) => prevLevel + 1);
+    }
 
-  (useState(() => {
-    setCards(shuffleArray(cardLevel));
-  }),
-    [level]);
+    // Shuffle cards
+    setCards(shuffleArray(cards));
+  }
+  //Introduce new cards (reset state) when level changes
+  useEffect(() => {
+    let nextCards;
+    // Get foodData array for each level and randomise its contents
+    if (level === 1)
+      nextCards = foodData.slice(0, 3); // Three cards
+    else if (level === 2)
+      nextCards = foodData.slice(0, 6); // Six cards
+    else if (level === 3)
+      nextCards = foodData.slice(0, 9); // Nine cards;
+    else nextCards = foodData; // Twelve cards
 
+    // Shuffle and display cards for appropriate level
+    setCards(shuffleArray(nextCards));
+    // Reset clickedIds
+    setClickedIds([]);
+  }, [level]);
+
+  // Render
   return (
     <div className="cards">
       {cards.map((card) => (
@@ -35,7 +54,7 @@ export default function Cards({ level }) {
           id={card.id}
           name={card.name}
           url={card.url}
-          onClick={() => setCards(shuffleArray(cardLevel))} // Randomise cards after each click
+          onClick={() => handleCardClick(card.id)}
         />
       ))}
     </div>
