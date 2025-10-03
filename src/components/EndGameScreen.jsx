@@ -1,12 +1,16 @@
 import '../styles/EndGameScreen.css';
 // End game display
-export default function EndGameScreen({ currentScore, restartClick }) {
+export default function EndGameScreen({ currentScore, restartClick, result }) {
+  let winMessage = '';
+
+  result === 'win' ? (winMessage = 'win') : (winMessage = 'lose');
+
   return (
     <div className="end-game-screen">
       <div className="end-game-box">
         <div className="end-game-box-top">
           <p>
-            You <span>win!</span>
+            You <span>{winMessage}</span>!
           </p>
         </div>
         <div className="end-game-box-bottom">
