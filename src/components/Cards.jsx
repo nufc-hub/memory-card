@@ -4,12 +4,17 @@ import { foodData } from '../constants/cardData';
 import Card from './Card';
 import shuffleArray from '../utils/shuffleArray';
 
-export default function Cards({ level, setLevel }) {
+export default function Cards({
+  level,
+  setLevel,
+  currentScore,
+  setCurrentScore,
+}) {
   const [cards, setCards] = useState([]);
   const [clickedIds, setClickedIds] = useState([]);
 
   function handleCardClick(id) {
-    // Check if card has been clicked already
+    // Checks if card has been clicked already
     if (clickedIds.includes(id)) {
       console.log('Game Over'); // Change this later - maybe a parameter like (message) that comes from a messages.js file
       return;
@@ -18,6 +23,9 @@ export default function Cards({ level, setLevel }) {
     // Adds the card ID to the clickedIds array so if the same card is clicked again - game over
     const newClicked = [...clickedIds, id];
     setClickedIds(newClicked);
+
+    // Increases the score by 1
+    setCurrentScore((prevCurrentScore) => prevCurrentScore + 1);
 
     if (newClicked.length === cards.length) {
       // If newClicked.length === cards.length, increase level by one and render next level
