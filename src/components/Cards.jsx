@@ -6,8 +6,8 @@ import shuffleArray from '../utils/shuffleArray';
 
 export default function Cards({
   level,
+  setActivePage,
   setLevel,
-  currentScore,
   setCurrentScore,
 }) {
   const [cards, setCards] = useState([]);
@@ -16,7 +16,7 @@ export default function Cards({
   function handleCardClick(id) {
     // Checks if card has been clicked already
     if (clickedIds.includes(id)) {
-      console.log('Game Over'); // Change this later - maybe a parameter like (message) that comes from a messages.js file
+      setActivePage('endGame');
       return;
     }
 
