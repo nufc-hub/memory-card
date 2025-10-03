@@ -8,10 +8,25 @@ import Footer from './components/Footer';
 import References from './components/References';
 
 function App() {
-  const [activePage, setActivePage] = useState('endGame'); // Switches between different pages on site
   const [level, setLevel] = useState(1); // Sets the game level, i.e. how many cards shown
-  const [currentScore, setCurrentScore] = useState(0); // This may go in scoreboard component
-  const [bestScore, setBestScore] = useState(0); // This may go in scoreboard component
+  const [activePage, setActivePage] = useState('home'); // Switches between different pages on site
+  const [currentScore, setCurrentScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
+
+  // Used in EndGameScreen - when restarting game
+  function handleRestartClick() {
+    setLevel(1);
+    setActivePage('home');
+    setCurrentScore(0);
+    // Check if higher than best score, if yes, increase best score
+    currentScore > bestScore ? setBestScore(currentScore) : bestScore;
+  }
+
+  // Used when moving to references page
+  function resetGame() {
+    setLevel(1);
+    setCurrentScore(0);
+  }
 
   return (
     <div>
@@ -20,8 +35,13 @@ function App() {
         <>
           <Header />
           <Scoreboard currentScore={currentScore} bestScore={bestScore} />
-          <Cards level={level} setLevel={setLevel} />
-          <Footer setActivePage={setActivePage} />
+          <Cards
+            level={level}
+            setActivePage={setActivePage}
+            setLevel={setLevel}
+            setCurrentScore={setCurrentScore}
+          />
+          <Footer setActivePage={setActivePage} resetGame={resetGame} />
         </>
       )}
 
@@ -30,7 +50,10 @@ function App() {
         <>
           <Header />
           <Scoreboard currentScore={currentScore} bestScore={bestScore} />
-          <EndGameScreen currentScore={currentScore} />
+          <EndGameScreen
+            currentScore={currentScore}
+            onClick={handleRestartClick}
+          />
         </>
       )}
 
