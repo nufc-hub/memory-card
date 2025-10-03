@@ -9,6 +9,7 @@ export default function Cards({
   setActivePage,
   setLevel,
   setCurrentScore,
+  setResult,
 }) {
   const [cards, setCards] = useState([]);
   const [clickedIds, setClickedIds] = useState([]);
@@ -16,6 +17,7 @@ export default function Cards({
   function handleCardClick(id) {
     // Checks if card has been clicked already
     if (clickedIds.includes(id)) {
+      setResult('lose');
       setActivePage('endGame');
       return;
     }
@@ -26,6 +28,13 @@ export default function Cards({
 
     // Increases the score by 1
     setCurrentScore((prevCurrentScore) => prevCurrentScore + 1);
+
+    // Check if win condition has been met
+    if (newClicked.length === foodData.length) {
+      setResult('win');
+      setActivePage('endGame');
+      return;
+    }
 
     if (newClicked.length === cards.length) {
       // If newClicked.length === cards.length, increase level by one and render next level
@@ -49,7 +58,7 @@ export default function Cards({
 
     // Shuffle and display cards for appropriate level
     setCards(shuffleArray(nextCards));
-    // Reset clickedIds
+    // Reset clickedIds - this resets ID's even when restarting or resetting game
     setClickedIds([]);
   }, [level]);
 
