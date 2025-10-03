@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { use, useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Scoreboard from './components/Scoreboard';
@@ -12,14 +12,20 @@ function App() {
   const [activePage, setActivePage] = useState('home'); // Switches between different pages on site
   const [currentScore, setCurrentScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
+  const [result, setResult] = useState(''); // win, lose or empty string during gameplay
 
   // Used in EndGameScreen - when restarting game
   function handleRestartClick() {
+    // Set level back to 1
     setLevel(1);
+    // Go back to homepage
     setActivePage('home');
-    setCurrentScore(0);
-    // Check if higher than best score, if yes, increase best score
+    // Check if score higher than best score, if yes, increase best score
     currentScore > bestScore ? setBestScore(currentScore) : bestScore;
+    // Set score back to 0
+    setCurrentScore(0);
+    // Sets results from win/lose to neutral
+    setResult('');
   }
 
   // Used when moving to references page
@@ -40,6 +46,7 @@ function App() {
             setActivePage={setActivePage}
             setLevel={setLevel}
             setCurrentScore={setCurrentScore}
+            setResult={setResult}
           />
           <Footer setActivePage={setActivePage} resetGame={resetGame} />
         </>
