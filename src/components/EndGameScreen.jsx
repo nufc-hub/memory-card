@@ -1,8 +1,8 @@
 import '../styles/EndGameScreen.css';
 // End game display
 export default function EndGameScreen({ currentScore, restartClick, result }) {
+  // Create win message depending on if it's a win or a lose
   let winMessage = '';
-
   result === 'win' ? (winMessage = 'win') : (winMessage = 'lose');
 
   return (
