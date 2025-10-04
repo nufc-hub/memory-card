@@ -2,7 +2,7 @@ import '../styles/Footer.css';
 
 export default function Footer({ setActivePage, resetGame }) {
   return (
-    <div className="footer">
+    <footer>
       {/* Links to references page */}
       <button
         onClick={() => {
@@ -13,6 +13,6 @@ export default function Footer({ setActivePage, resetGame }) {
       >
         References
       </button>
-    </div>
+    </footer>
   );
 }
