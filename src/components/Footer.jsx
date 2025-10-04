@@ -4,15 +4,16 @@ export default function Footer({ setActivePage, resetGame }) {
   return (
     <footer>
       {/* Links to references page */}
-      <button
-        onClick={() => {
+      <a
+        onClick={(e) => {
+          e.preventDefault();
           setActivePage('references');
           resetGame();
         }}
-        className="references-button"
+        className="references-link"
       >
         References
-      </button>
+      </a>
     </footer>
   );
 }
