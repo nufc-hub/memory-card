@@ -14,6 +14,7 @@ export default function Footer({ setActivePage, resetGame }) {
       >
         References
       </a>
+      <p>nufc</p>
     </footer>
   );
 }
