@@ -1,0 +1,26 @@
+.card {
+  max-width: 225px;
+  border: 5px solid black;
+  border-radius: 15px;
+  background-color: transparent;
+  transition: transform 0.2s ease;
+}
+
+/* Slight pop-out effect */
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Slight press-in effect */
+.card:active {
+  transform: scale(0.98);
+}
+
+.card-contents {
+  padding: 1rem;
+}
+
+.card img {
+  width: 90%;
+  height: auto;
+}
