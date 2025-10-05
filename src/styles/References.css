@@ -1,23 +1,71 @@
-.references-page,
-.home-button {
+.references-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.references-page {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.home-link {
+  padding: 1rem;
+  transition: transform 0.2s ease;
+  font-size: 3rem;
+}
+
+.home-link {
+  animation-name: popEffect;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.references {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .reference {
   margin-bottom: 1rem;
   list-style-type: none;
+  transition: transform 0.1s ease;
 }
 
-.home-button {
-  width: 6rem;
-  height: 3rem;
-  border-radius: 12px;
+.reference > a {
+  text-decoration: none;
+  color: darkblue;
+}
+
+.reference > a:visited {
+  color: darkblue;
+}
+
+.home-link:hover {
+  transform: scale(1.2);
+}
+
+@keyframes popEffect {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1); /* Slightly larger */
+    opacity: 0.8; /* Slightly less opaque */
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
