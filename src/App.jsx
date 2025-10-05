@@ -35,7 +35,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="main">
       {activePage === 'home' && (
         // Homepage
         <>
@@ -59,7 +59,8 @@ function App() {
           <Scoreboard currentScore={currentScore} bestScore={bestScore} />
           <EndGameScreen
             currentScore={currentScore}
-            onClick={handleRestartClick}
+            restartClick={handleRestartClick}
+            result={result}
           />
         </>
       )}
