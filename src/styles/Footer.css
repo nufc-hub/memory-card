@@ -1,4 +1,5 @@
-footer {
+.main-footer,
+.references-footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,15 +9,29 @@ footer {
   min-height: 3rem;
 }
 
-img {
+.main-footer > a,
+.references-footer > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-footer-img {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+.references-footer-img {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block; /* removes any descender gap under the image */
 }
 
 .references-link,
 .github-link {
   padding: 1rem;
   transition: transform 0.2s ease;
+  font-size: 1.5rem;
 }
 
 .references-link:hover,
