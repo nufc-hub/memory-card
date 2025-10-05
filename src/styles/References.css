@@ -11,14 +11,15 @@ header {
   padding: 1rem;
   transition: transform 0.2s ease;
   font-size: 3rem;
-}
-
-.home-link {
   animation-name: popEffect;
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+.home-link:hover {
+  transform: scale(1.2);
 }
 
 .references {
@@ -42,10 +43,6 @@ header {
 
 .reference > a:visited {
   color: darkblue;
-}
-
-.home-link:hover {
-  transform: scale(1.2);
 }
 
 @keyframes popEffect {
