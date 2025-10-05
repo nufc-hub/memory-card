@@ -1,4 +1,5 @@
 import '../styles/Footer.css';
+import githubIcon from '../assets/links/github/github-mark/github-mark.svg';
 
 export default function Footer({ setActivePage, resetGame }) {
   return (
@@ -12,9 +13,17 @@ export default function Footer({ setActivePage, resetGame }) {
         }}
         className="references-link"
       >
-        References
+        references
       </a>
-      <p>nufc</p>
+      <a
+        href="https://github.com/nufc-hub"
+        target="blank"
+        rel="noopener noreferrer"
+        className="github-link"
+      >
+        <img src={githubIcon} alt="GitHub" />
+        <p>nufc</p>
+      </a>
     </footer>
   );
 }
