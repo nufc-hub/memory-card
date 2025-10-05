@@ -6,7 +6,7 @@ import '../styles/Footer.css';
 // Renders asset references
 export default function References({ setActivePage }) {
   return (
-    <div className="references-page">
+    <>
       {/* Links to homepage */}
       <header>
         <a
@@ -50,6 +50,6 @@ export default function References({ setActivePage }) {
           <p>nufc</p>
         </a>
       </footer>
-    </div>
+    </>
   );
 }
