@@ -9,7 +9,7 @@ export default function EndGameScreen({ currentScore, restartClick, result }) {
     <div className="end-game-screen">
       <div className="end-game-box">
         <div className="end-game-box-top">
-          <p>
+          <p className="end-game-message">
             You <span>{winMessage}</span>!
           </p>
         </div>
