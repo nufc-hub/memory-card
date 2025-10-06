@@ -8,7 +8,7 @@ export default function References({ setActivePage }) {
   return (
     <>
       {/* Links to homepage */}
-      <div>
+      <div className="refences-top">
         <a
           className="home-link"
           onClick={(e) => {
@@ -20,7 +20,7 @@ export default function References({ setActivePage }) {
         </a>
       </div>
       {/* Asset references */}
-      <div className="references">
+      <div className="references-middle">
         {referencesData.map((reference) => (
           <li className="reference" key={reference.id}>
             <a
