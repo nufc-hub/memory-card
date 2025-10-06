@@ -63,3 +63,10 @@
     opacity: 1;
   }
 }
+
+/* Styles for screens up to 480px wide (e.g., small mobile phones in portrait) */
+@media (max-width: 480px) {
+  .home-link {
+    margin-bottom: 1rem;
+  }
+}
