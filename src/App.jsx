@@ -62,6 +62,7 @@ function App() {
             restartClick={handleRestartClick}
             result={result}
           />
+          <Footer setActivePage={setActivePage} resetGame={resetGame} />
         </>
       )}
 
