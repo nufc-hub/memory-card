@@ -1,18 +1,28 @@
-header {
-  margin-top: 2rem;
+.main-header {
+  margin-top: 1rem;
   margin-bottom: 2rem;
 }
 
 .logo-container {
-  display: flex;
-  justify-content: center;
 }
 
-.logo {
-  font-size: 3rem;
+.logo > h1 {
+  font-size: 4rem;
   color: white;
   -webkit-text-stroke-width: 2px; /* Sets the outline thickness to 2 pixels */
   -webkit-text-stroke-color: black; /* Sets the outline color to black */
+  text-align: center;
+}
+
+/* Styles for mobile and smaller screens */
+@media (max-width: 767px) {
+  .main-header {
+    margin-top: 2rem;
+  }
+
+  .logo > h1 {
+    font-size: 2rem;
+  }
 }
 
 /* Tablet devices */
