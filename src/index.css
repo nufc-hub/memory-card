@@ -1,5 +1,6 @@
 :root {
   --main-font: 'Ubuntu', sans-serif;
+  --main-background-colour: #f8c6d0;
 }
 
 * {
@@ -11,6 +12,6 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: #f8c6d0;
+  background-color: var(--main-background-colour);
   font-family: var(--main-font);
 }
