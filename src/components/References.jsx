@@ -8,7 +8,7 @@ export default function References({ setActivePage }) {
   return (
     <>
       {/* Links to homepage */}
-      <header>
+      <div>
         <a
           className="home-link"
           onClick={(e) => {
@@ -18,7 +18,7 @@ export default function References({ setActivePage }) {
         >
           Go back to game
         </a>
-      </header>
+      </div>
       {/* Asset references */}
       <div className="references">
         {referencesData.map((reference) => (
