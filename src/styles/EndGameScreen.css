@@ -19,10 +19,6 @@
   background-color: #d0e9db;
 }
 
-.end-game-box-top {
-  /*  */
-}
-
 .end-game-box-bottom {
   display: flex;
   gap: 4rem;
@@ -42,10 +38,6 @@
   border-radius: 12px;
   background-color: var(--main-background-colour);
   font-size: 1.5rem;
-}
-
-.end-game-score {
-  /*  */
 }
 
 .restart-game-button {
