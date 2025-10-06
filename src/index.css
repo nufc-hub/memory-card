@@ -1,6 +1,7 @@
 :root {
   --main-font: 'Ubuntu', sans-serif;
   --main-background-colour: #f8c6d0;
+  --secondary-background-colour: #d0e9dbd7;
 }
 
 * {
