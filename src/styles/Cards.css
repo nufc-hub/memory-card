@@ -5,3 +5,10 @@
   margin-top: 3rem;
   gap: 5rem;
 }
+
+@media (max-width: 767px) {
+  .cards {
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+}

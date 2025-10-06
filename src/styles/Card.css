@@ -27,3 +27,15 @@
   padding: 0.5rem;
   height: auto;
 }
+
+@media (max-width: 480px) {
+  .card {
+    max-width: 130px;
+  }
+
+  .card-contents {
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    text-wrap: wrap;
+  }
+}
