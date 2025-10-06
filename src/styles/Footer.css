@@ -51,3 +51,11 @@
 .github-link:visited {
   color: black;
 }
+
+/* Styles for screens up to 480px wide (e.g., small mobile phones in portrait) */
+@media (max-width: 480px) {
+  .main-footer,
+  .references-footer {
+    margin-bottom: 0;
+  }
+}
