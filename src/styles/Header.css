@@ -1,9 +1,8 @@
+/* Main /end game header styling */
+
 .main-header {
   margin-top: 1rem;
   margin-bottom: 2rem;
-}
-
-.logo-container {
 }
 
 .logo > h1 {
@@ -14,8 +13,15 @@
   text-align: center;
 }
 
+/* Reference page header styling */
+
+header > .home-link {
+  text-align: center;
+}
+
 /* Styles for mobile and smaller screens */
 @media (max-width: 767px) {
+  /* Main /end game header styling */
   .main-header {
     margin-top: 2rem;
   }
@@ -27,6 +33,7 @@
 
 /* Tablet devices */
 @media (min-width: 768px) {
+  /* Main /end game header styling */
   .logo {
     font-size: 4rem;
   }
