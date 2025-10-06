@@ -11,9 +11,10 @@
   flex-direction: column;
   align-items: center;
   margin-top: 3rem;
+  padding: 2rem;
   gap: 3rem;
-  width: 750px;
-  height: 300px;
+  width: min(90%, 750px);
+  aspect-ratio: 5 / 2;
   border: 4px solid black;
   border-radius: 12px;
   background-color: var(--secondary-background-colour);
@@ -25,15 +26,17 @@
 }
 
 .end-game-message {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-align: center;
 }
 
 .end-game-score,
 .restart-game-button {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 2rem;
-  width: 250px;
+  max-width: 250px;
   border: 3px solid black;
   border-radius: 12px;
   background-color: var(--main-background-colour);
@@ -42,8 +45,23 @@
 
 .restart-game-button {
   transition: transform 0.5s ease;
+  cursor: pointer;
 }
 
 .restart-game-button:hover {
   transform: scale(1.05);
+}
+
+/* Mobile/tablet devices */
+@media (max-width: 767px) {
+  .end-game-box {
+    gap: 1rem;
+    width: 90%;
+    aspect-ratio: 3 / 2;
+  }
+
+  .end-game-box-bottom {
+    flex-direction: column; /* stack vertically on smaller screens */
+    gap: 1rem;
+  }
 }
