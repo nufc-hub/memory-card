@@ -1,20 +1,21 @@
 .scoreboard {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin-bottom: 3rem;
   gap: 3rem;
 }
 
 .scorecard {
-  display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  width: 18rem;
-  height: 4rem;
+  max-width: 18rem;
+  min-width: 150px;
+  aspect-ratio: 4 / 1;
   border: 3px solid black;
   border-radius: 12px;
   background-color: var(--secondary-background-colour);
   text-align: center;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
