@@ -69,7 +69,7 @@ export default function Cards({
       {cards.map((card) => (
         <Card
           key={card.id}
-          name={card.name}
+          title={card.title}
           url={card.url}
           onClick={() => handleCardClick(card.id)}
         />
