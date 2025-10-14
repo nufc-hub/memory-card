@@ -7,7 +7,6 @@ import Scoreboard from './components/Scoreboard';
 import Cards from './components/Cards';
 import EndGameScreen from './components/EndGameScreen';
 import Footer from './components/Footer';
-import References from './components/References';
 import { useEffect } from 'react';
 
 function App() {
@@ -41,12 +40,6 @@ function App() {
     setResult('');
   }
 
-  // Used when moving to references page
-  function resetGame() {
-    setLevel(1);
-    setCurrentScore(0);
-  }
-
   return (
     <div className="main">
       {activePage === 'home' && (
@@ -62,7 +55,7 @@ function App() {
             setResult={setResult}
             cardsData={gifs} // Maybe change the name depending on what is in this gifs data prop
           />
-          <Footer setActivePage={setActivePage} resetGame={resetGame} />
+          <Footer />
         </>
       )}
 
@@ -76,16 +69,9 @@ function App() {
             restartClick={handleRestartClick}
             result={result}
           />
-          <Footer setActivePage={setActivePage} resetGame={resetGame} />
+          <Footer />
         </>
       )}
-
-      {
-        // References page
-        activePage === 'references' && (
-          <References setActivePage={setActivePage} />
-        )
-      }
     </div>
   );
 }
