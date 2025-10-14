@@ -1,4 +1,6 @@
 import { use, useState } from 'react';
+import { fetchGifs } from './utils/fetchGifs';
+import { apiKey, GIF_IDS, GIF_TITLES } from './config/giphyConfig';
 import './App.css';
 import Header from './components/Header';
 import Scoreboard from './components/Scoreboard';
@@ -6,13 +8,24 @@ import Cards from './components/Cards';
 import EndGameScreen from './components/EndGameScreen';
 import Footer from './components/Footer';
 import References from './components/References';
+import { useEffect } from 'react';
 
 function App() {
   const [level, setLevel] = useState(1); // Sets the game level, i.e. how many cards shown
+  const [gifs, setGifs] = useState([]); // Stores the loaded gifs - to be used by the cards
   const [activePage, setActivePage] = useState('home'); // Switches between different pages on site
   const [currentScore, setCurrentScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [result, setResult] = useState(''); // win, lose or empty string during gameplay
+
+  // Get card image files
+  useEffect(() => {
+    async function loadGifs() {
+      const data = await fetchGifs(apiKey, GIF_IDS, GIF_TITLES);
+      setGifs(data);
+    }
+    loadGifs();
+  }, []);
 
   // Used in EndGameScreen - when restarting game
   function handleRestartClick() {
@@ -47,6 +60,7 @@ function App() {
             setLevel={setLevel}
             setCurrentScore={setCurrentScore}
             setResult={setResult}
+            cardsData={gifs} // Maybe change the name depending on what is in this gifs data prop
           />
           <Footer setActivePage={setActivePage} resetGame={resetGame} />
         </>
