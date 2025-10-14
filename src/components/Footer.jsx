@@ -1,20 +1,11 @@
 import '../styles/Footer.css';
 import githubIcon from '../assets/links/github/github-mark/github-mark.svg';
 
-export default function Footer({ setActivePage, resetGame }) {
+export default function Footer() {
   return (
     <footer className="main-footer">
       {/* Links to references page */}
-      <a
-        onClick={(e) => {
-          e.preventDefault();
-          setActivePage('references');
-          resetGame();
-        }}
-        className="references-link"
-      >
-        references
-      </a>
+      <a className="references-link">references</a>
       <a
         href="https://github.com/nufc-hub"
         target="blank"
