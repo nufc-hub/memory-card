@@ -9,7 +9,7 @@ export async function fetchGifs(apiKey, gifIds, gifTitles) {
   return data.data.map((gif, index) => ({
     // Giphy image id
     id: gif.id,
-    // Titles created in giphyConfig file
+    // Titles created in ../config/giphyConfig.js file
     title: gifTitles[index],
     url: gif.images.fixed_height.url,
   }));
