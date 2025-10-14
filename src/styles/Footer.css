@@ -1,5 +1,4 @@
-.main-footer,
-.references-footer {
+.footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,34 +8,32 @@
   min-height: 3rem;
 }
 
-.main-footer > a,
-.references-footer > a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.main-footer-img {
+.footer-img {
   width: 1.5rem;
   height: 1.5rem;
 }
 
-.references-footer-img {
-  width: 1.5rem;
-  height: 1.5rem;
-  display: block; /* removes any descender gap under the image */
+.giphy-link {
+  padding: 0.5rem;
 }
 
-.references-link,
 .github-link {
   padding: 1rem;
+}
+
+.github-link {
   transition: transform 0.2s ease;
   font-size: 1.5rem;
 }
 
-.references-link:hover,
 .github-link:hover {
   transform: scale(1.2);
+}
+
+.giphy-link,
+.github-link {
+  text-decoration: none;
+  color: black;
 }
 
 .github-link {
@@ -44,18 +41,16 @@
   justify-content: center;
   align-items: center;
   gap: 0.2rem;
-  text-decoration: none;
-  color: black;
 }
 
+.giphy-link:visited,
 .github-link:visited {
   color: black;
 }
 
 /* Styles for screens up to 480px wide (e.g., small mobile phones in portrait) */
 @media (max-width: 480px) {
-  .main-footer,
-  .references-footer {
+  .footer {
     margin-bottom: 0;
   }
 }
