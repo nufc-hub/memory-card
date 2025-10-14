@@ -1,6 +1,6 @@
 import '../styles/Cards.css';
 import { useState, useEffect } from 'react';
-import { foodData } from '../constants/cardData';
+// import { foodData } from '../constants/cardData';
 import Card from './Card';
 import shuffleArray from '../utils/shuffleArray';
 
@@ -10,6 +10,7 @@ export default function Cards({
   setLevel,
   setCurrentScore,
   setResult,
+  cardsData,
 }) {
   const [cards, setCards] = useState([]);
   const [clickedIds, setClickedIds] = useState([]);
@@ -30,7 +31,7 @@ export default function Cards({
     setCurrentScore((prevCurrentScore) => prevCurrentScore + 1);
 
     // Check if win condition has been met
-    if (newClicked.length === foodData.length) {
+    if (newClicked.length === cardsData.length) {
       setResult('win');
       setActivePage('endGame');
       return;
@@ -47,20 +48,20 @@ export default function Cards({
   //Introduce new cards (reset state) when level changes
   useEffect(() => {
     let nextCards;
-    // Get foodData array for each level and randomise its contents
+    // Get cardsData array for each level and randomise its contents
     if (level === 1)
-      nextCards = foodData.slice(0, 3); // Three cards
+      nextCards = cardsData.slice(0, 3); // Three cards
     else if (level === 2)
-      nextCards = foodData.slice(0, 6); // Six cards
+      nextCards = cardsData.slice(0, 6); // Six cards
     else if (level === 3)
-      nextCards = foodData.slice(0, 9); // Nine cards;
-    else nextCards = foodData; // Twelve cards
+      nextCards = cardsData.slice(0, 9); // Nine cards;
+    else nextCards = cardsData; // Twelve cards
 
     // Shuffle and display cards for appropriate level
     setCards(shuffleArray(nextCards));
     // Reset clickedIds - this resets ID's even when restarting or resetting game
     setClickedIds([]);
-  }, [level]);
+  }, [level, cardsData]);
 
   // Render
   return (
