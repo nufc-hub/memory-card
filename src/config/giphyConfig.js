@@ -14,3 +14,18 @@ export const GIF_IDS = [
   'ixe7JckdpY7cOqOLq6', // jiggae
   'N0FwVFDfY72EtbcYoV', // dasik
 ];
+
+export const GIF_TITLES = [
+  'kimchi',
+  'songpyeong',
+  'bibimbap',
+  'daege',
+  'naengmyeon',
+  'tteokbokki',
+  'samgyeopsal',
+  'seolleongtang',
+  'jeon',
+  'dalkgalbi',
+  'jiggae',
+  'dasik',
+];
