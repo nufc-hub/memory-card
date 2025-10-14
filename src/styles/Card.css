@@ -1,5 +1,6 @@
 .card {
-  max-width: 225px;
+  width: 225px;
+  height: 250px;
   border: 5px solid black;
   border-radius: 15px;
   background-color: transparent;
@@ -14,6 +15,7 @@
 
 /* Slight press-in effect */
 .card:active {
+  /* Add via javascript */
   transform: scale(0.9);
 }
 
@@ -22,15 +24,25 @@
   font-size: 1.5rem;
 }
 
-.card img {
+.card-contents > img {
   width: 90%;
+  height: 90%;
   padding: 0.5rem;
-  height: auto;
 }
 
 @media (max-width: 480px) {
   .card {
-    max-width: 130px;
+    width: 130px;
+    height: 150px;
+  }
+
+  .card:hover {
+    background-color: unset;
+  }
+
+  .card:active {
+    /* add via javascript */
+    background-color: var(--secondary-background-colour);
   }
 
   .card-contents {
