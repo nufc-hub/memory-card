@@ -1,4 +1,4 @@
-import '../styles/Cards.css';
+import '../styles/GameBoard.css';
 import { useState, useEffect } from 'react';
 // import { foodData } from '../constants/cardData';
 import Card from './Card';
