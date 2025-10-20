@@ -9,14 +9,15 @@
 
 /* Slight pop-out effect */
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   background-color: var(--secondary-background-colour);
 }
 
 /* Slight press-in effect */
 .card:active {
   /* Add via javascript */
-  transform: scale(0.9);
+  transform: scale(0.8);
+  border-color: red;
 }
 
 .card-contents {
@@ -34,15 +35,17 @@
   .card {
     width: 130px;
     height: 150px;
+    transition: border-color 0.2 ease;
   }
 
   .card:hover {
+    transform: none;
     background-color: unset;
   }
 
   .card:active {
-    /* add via javascript */
     background-color: var(--secondary-background-colour);
+    border-color: none;
   }
 
   .card-contents {
