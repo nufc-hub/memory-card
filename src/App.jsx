@@ -1,13 +1,13 @@
 import { use, useState } from 'react';
+import { useEffect } from 'react';
 import { fetchGifs } from './utils/fetchGifs';
 import { apiKey, GIF_IDS, GIF_TITLES } from './config/giphyConfig';
-import './App.css';
 import Header from './components/Header';
 import Scoreboard from './components/Scoreboard';
-import Cards from './components/Cards';
+import Cards from './components/GameBoard';
 import EndGameScreen from './components/EndGameScreen';
 import Footer from './components/Footer';
-import { useEffect } from 'react';
+import './App.css';
 
 function App() {
   const [level, setLevel] = useState(1); // Sets the game level, i.e. how many cards shown
