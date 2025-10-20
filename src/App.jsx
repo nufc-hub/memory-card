@@ -1,5 +1,4 @@
-import { use, useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { fetchGifs } from './utils/fetchGifs';
 import { apiKey, GIF_IDS, GIF_TITLES } from './config/giphyConfig';
 import Header from './components/Header';
