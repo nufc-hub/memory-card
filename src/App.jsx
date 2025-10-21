@@ -29,16 +29,18 @@ function App() {
     loadGifs();
   }, []);
 
-  // Used in EndGameScreen - when restarting game
+  // Used in EndGameScreen - restart game when game is finished
   function handleRestartClick() {
+    // Check if score higher than best score, if yes, increase best score
+    if (currentScore > bestScore) {
+      setBestScore(currentScore);
+    }
+    // Set score back to 0
+    setCurrentScore(0);
     // Set level back to 1
     setLevel(1);
     // Go back to homepage
     setActivePage('home');
-    // Check if score higher than best score, if yes, increase best score
-    currentScore > bestScore ? setBestScore(currentScore) : bestScore;
-    // Set score back to 0
-    setCurrentScore(0);
     // Sets results from win/lose to neutral
     setResult('');
   }
