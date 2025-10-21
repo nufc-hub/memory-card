@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div className="main">
-      {activePage === 'home' && (
+      {activePage === 'home' ? (
         // Homepage
         <>
           <Header />
@@ -62,20 +62,20 @@ function App() {
           />
           <Footer />
         </>
-      )}
-
-      {activePage === 'endGame' && (
-        // End game screen
-        <>
-          <Header />
-          <Scoreboard currentScore={currentScore} bestScore={bestScore} />
-          <EndGameScreen
-            currentScore={currentScore}
-            restartClick={handleRestartClick}
-            result={result}
-          />
-          <Footer />
-        </>
+      ) : (
+        activePage === 'endGame' && (
+          // End game screen
+          <>
+            <Header />
+            <Scoreboard currentScore={currentScore} bestScore={bestScore} />
+            <EndGameScreen
+              currentScore={currentScore}
+              restartClick={handleRestartClick}
+              result={result}
+            />
+            <Footer />
+          </>
+        )
       )}
     </div>
   );
