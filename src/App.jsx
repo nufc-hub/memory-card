@@ -19,8 +19,12 @@ function App() {
   // Get card image files
   useEffect(() => {
     async function loadGifs() {
-      const data = await fetchGifs(apiKey, GIF_IDS, GIF_TITLES);
-      setGifs(data);
+      try {
+        const data = await fetchGifs(apiKey, GIF_IDS, GIF_TITLES);
+        setGifs(data);
+      } catch (error) {
+        console.error('Failed to load GIFs:', error);
+      }
     }
     loadGifs();
   }, []);
