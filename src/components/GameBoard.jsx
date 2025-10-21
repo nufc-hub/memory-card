@@ -42,7 +42,7 @@ export default function Cards({
     }
 
     // Shuffle cards
-    setCards(shuffleArray(cards));
+    setCards((prevCards) => shuffleArray(prevCards));
   }
   //Introduce new cards (reset state) when level changes
   useEffect(() => {
