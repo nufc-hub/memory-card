@@ -9,14 +9,14 @@ import Footer from './components/Footer';
 import './App.css';
 
 function App() {
-  const [level, setLevel] = useState(1); // Sets the game level, i.e. how many cards shown
-  const [gifs, setGifs] = useState([]); // Stores the loaded gifs - to be used by the cards
-  const [activePage, setActivePage] = useState('home'); // Switches between different pages on site
+  const [level, setLevel] = useState(1);
+  const [gifs, setGifs] = useState([]);
+  const [activePage, setActivePage] = useState('home');
   const [currentScore, setCurrentScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
-  const [result, setResult] = useState(''); // win, lose or empty string during gameplay
+  const [result, setResult] = useState(''); // win, lose or ''
 
-  // Get card image files
+  // Load GIFs on ititial render
   useEffect(() => {
     async function loadGifs() {
       try {
@@ -29,26 +29,20 @@ function App() {
     loadGifs();
   }, []);
 
-  // Used in EndGameScreen - restart game when game is finished
+  // Used in EndGameScreen - restart when game is finished
   function handleRestartClick() {
-    // Check if score higher than best score, if yes, increase best score
     if (currentScore > bestScore) {
       setBestScore(currentScore);
     }
-    // Set score back to 0
     setCurrentScore(0);
-    // Set level back to 1
     setLevel(1);
-    // Go back to homepage
     setActivePage('home');
-    // Sets results from win/lose to neutral
     setResult('');
   }
 
   return (
     <div className="main">
       {activePage === 'home' ? (
-        // Homepage
         <>
           <Header />
           <Scoreboard currentScore={currentScore} bestScore={bestScore} />
@@ -64,7 +58,6 @@ function App() {
         </>
       ) : (
         activePage === 'endGame' && (
-          // End game screen
           <>
             <Header />
             <Scoreboard currentScore={currentScore} bestScore={bestScore} />
