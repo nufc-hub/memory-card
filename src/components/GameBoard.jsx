@@ -23,20 +23,20 @@ export default function Cards({
     }
 
     // Adds the card ID to the clickedIds array so if the same card is clicked again - game over
-    const newClicked = [...clickedIds, id];
-    setClickedIds(newClicked);
+    const updatedClickedIds = [...clickedIds, id];
+    setClickedIds(updatedClickedIds);
 
     // Increases the score by 1
     setCurrentScore((prevCurrentScore) => prevCurrentScore + 1);
 
     // Check if win condition has been met
-    if (newClicked.length === cardsData.length) {
+    if (updatedClickedIds.length === cardsData.length) {
       setResult('win');
       setActivePage('endGame');
       return;
     }
 
-    if (newClicked.length === cards.length) {
+    if (updatedClickedIds.length === cards.length) {
       // If newClicked.length === cards.length, increase level by one and render next level
       setLevel((prevLevel) => prevLevel + 1);
     }
