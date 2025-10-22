@@ -15,34 +15,36 @@ export default function Cards({
   const [clickedIds, setClickedIds] = useState([]);
 
   function handleCardClick(id) {
-    // Checks if card has been clicked already
+    // If card was already clicked, then game over
     if (clickedIds.includes(id)) {
       setResult('lose');
       setActivePage('endGame');
       return;
     }
 
-    // Adds the card ID to the clickedIds array so if the same card is clicked again - game over
+    // Add card ID to clicked list
     const updatedClickedIds = [...clickedIds, id];
     setClickedIds(updatedClickedIds);
 
-    // Increases the score by 1
+    // Increase score
     setCurrentScore((prevCurrentScore) => prevCurrentScore + 1);
 
-    // Check if win condition has been met
+    // Check if player has clicked all cards (win)
     if (updatedClickedIds.length === cardsData.length) {
       setResult('win');
       setActivePage('endGame');
       return;
     }
 
+    // If player completed the current level, move to next
     if (updatedClickedIds.length === cards.length) {
       setLevel((prevLevel) => prevLevel + 1);
     }
 
-    // Shuffle cards
+    // Shuffle cards after every successful click
     setCards((prevCards) => shuffleArray(prevCards));
   }
+
   // Reset cards and clicks when level changes
   useEffect(() => {
     let numberOfCards;
@@ -56,7 +58,6 @@ export default function Cards({
     setClickedIds([]);
   }, [level, cardsData]);
 
-  // Render
   return (
     <div className="cards">
       {cards.map(({ id, title, url }) => (
