@@ -37,28 +37,22 @@ export default function Cards({
     }
 
     if (updatedClickedIds.length === cards.length) {
-      // If newClicked.length === cards.length, increase level by one and render next level
       setLevel((prevLevel) => prevLevel + 1);
     }
 
     // Shuffle cards
     setCards((prevCards) => shuffleArray(prevCards));
   }
-  //Introduce new cards (reset state) when level changes
+  // Reset cards and clicks when level changes
   useEffect(() => {
-    let nextCards;
-    // Get cardsData array for each level and randomise its contents
-    if (level === 1)
-      nextCards = cardsData.slice(0, 3); // Three cards
-    else if (level === 2)
-      nextCards = cardsData.slice(0, 6); // Six cards
-    else if (level === 3)
-      nextCards = cardsData.slice(0, 9); // Nine cards;
-    else nextCards = cardsData; // Twelve cards
+    let numberOfCards;
+    if (level === 1) numberOfCards = 3;
+    else if (level === 2) numberOfCards = 6;
+    else if (level === 3) numberOfCards = 9;
+    else numberOfCards = cardsData.length; // Level 4 shows all cards
 
-    // Shuffle and display cards for appropriate level
-    setCards(shuffleArray(nextCards));
-    // Reset clickedIds - this resets ID's even when restarting or resetting game
+    const nextCards = shuffleArray(cardsData.slice(0, numberOfCards));
+    setCards(nextCards);
     setClickedIds([]);
   }, [level, cardsData]);
 
