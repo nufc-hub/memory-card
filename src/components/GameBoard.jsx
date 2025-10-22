@@ -59,12 +59,12 @@ export default function Cards({
   // Render
   return (
     <div className="cards">
-      {cards.map((card) => (
+      {cards.map(({ id, title, url }) => (
         <Card
-          key={card.id}
-          title={card.title}
-          url={card.url}
-          onClick={() => handleCardClick(card.id)}
+          key={id}
+          title={title}
+          url={url}
+          onClick={() => handleCardClick(id)}
         />
       ))}
     </div>
