@@ -1,5 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
+  background-color: var(--main-background-colour);
+  font-family: var(--main-font);
 }
