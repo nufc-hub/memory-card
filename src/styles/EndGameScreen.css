@@ -34,7 +34,6 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 4rem;
-  /* Maybe need to remove this width */
   width: 100%;
 }
 
