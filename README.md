@@ -1,12 +1,28 @@
-# React + Vite
+# 🧠 Memory Card Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based Memory Card Game built as part of [The Odin Project](https://www.theodinproject.com/) React course.
 
-Currently, two official plugins are available:
+Built using React, Vite and CSS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The goal is to test your memory by clicking unique cards without selecting the same one twice.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Features
+
+- **React Functional Components** with Hooks
+- **Dynamic Game State** — cards reshuffle after each click
+- **Score Tracking** — shows current and best scores
+- **Responsive Design** — adjusts smoothly across desktop and mobile
+- **Modular Components** — clean, maintainable structure
+
+---
+
+## 🎮 How to Play
+
+1. Click a card to earn a point.
+2. Each time you click, all cards reshuffle.
+3. Don’t click the same card twice — or your score resets!
+4. Try to get the highest score possible.
+
+---
