@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 3rem;
+  padding: 0.25rem;
   gap: 5rem;
 }
 
