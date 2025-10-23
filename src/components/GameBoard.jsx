@@ -59,7 +59,7 @@ export default function Cards({
   }, [level, cardsData]);
 
   return (
-    <div className="cards">
+    <div className="game-board">
       {cards.map(({ id, title, url }) => (
         <Card
           key={id}
