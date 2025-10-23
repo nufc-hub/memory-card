@@ -1,14 +1,22 @@
 .main-header {
   margin-top: 1rem;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
+/* Logo text */
 .logo > h1 {
-  font-size: 4rem;
-  color: white;
+  margin: 0;
+  font-size: clamp(
+    2rem,
+    6vw,
+    5rem
+  ); /* scales smoothly from mobile to desktop */
+  color: #fff;
   -webkit-text-stroke-width: 2px; /* Sets the outline thickness to 2 pixels */
-  -webkit-text-stroke-color: black; /* Sets the outline color to black */
+  -webkit-text-stroke-color: #000; /* Sets the outline color to black */
   text-align: center;
+  text-stroke: 2px black; /* fallback for header outline width and colour */
 }
 
 /* Styles for mobile and smaller screens */
@@ -18,28 +26,13 @@
   }
 
   .logo > h1 {
-    font-size: 2rem;
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
   }
 }
 
 /* Tablet devices */
 @media (min-width: 768px) {
-  .logo {
-    font-size: 4rem;
-  }
-
   .header {
     margin-top: 1rem;
-  }
-}
-
-/* PC devices */
-@media (min-width: 1024px) {
-  .header {
-    margin-top: 0;
-  }
-
-  .logo > h1 {
-    font-size: 5rem;
   }
 }
