@@ -3,7 +3,7 @@ import { fetchGifs } from './utils/fetchGifs';
 import { apiKey, GIF_IDS, GIF_TITLES } from './config/giphyConfig';
 import Header from './components/Header';
 import Scoreboard from './components/Scoreboard';
-import Cards from './components/GameBoard';
+import GameBoard from './components/GameBoard';
 import EndGameScreen from './components/EndGameScreen';
 import Footer from './components/Footer';
 import './App.css';
@@ -46,7 +46,7 @@ function App() {
         <>
           <Header />
           <Scoreboard currentScore={currentScore} bestScore={bestScore} />
-          <Cards
+          <GameBoard
             level={level}
             setActivePage={setActivePage}
             setLevel={setLevel}
