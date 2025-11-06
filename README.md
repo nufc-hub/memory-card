@@ -6,6 +6,8 @@ Built using React, Vite and CSS.
 
 The goal is to test your memory by clicking unique cards without selecting the same one twice.
 
+[Try it out!](https://memory-card-bwu.pages.dev/)
+
 ---
 
 ## 🚀 Features
